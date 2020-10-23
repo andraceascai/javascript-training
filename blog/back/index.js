@@ -53,6 +53,7 @@ app.post("/user", (req, res) => {
     )
     res.sendStatus(200)
 })
+
 app.get("/user/login", (req, res) => {
     let email = req.query.email
     let password = req.query.password
@@ -73,6 +74,7 @@ app.get("/user/login", (req, res) => {
         }
     )
 })
+
 app.post("/posts", (req, res) => {
     if (!verifyLogin(req, res)) {
         return
@@ -83,6 +85,7 @@ app.post("/posts", (req, res) => {
     )
     res.sendStatus(200)
 })
+
 app.get("/posts/:id", (req, res) => {
     if (!verifyLogin(req, res)) {
         return
@@ -98,6 +101,7 @@ app.get("/posts/:id", (req, res) => {
         }
     )    
 })
+
 app.delete("/posts/:id", (req, res) => {
     if (!verifyLogin(req, res)) {
         return
@@ -114,6 +118,7 @@ app.delete("/posts/:id", (req, res) => {
         }
     )
 })
+
 app.get("/posts", (req, res) => {
     if (!verifyLogin(req, res)) {
         return
@@ -129,6 +134,7 @@ app.get("/posts", (req, res) => {
         }
     )
 })
+
 app.put("/posts/:id", (req, res) => {
     if (!verifyLogin(req, res)) {
         return
