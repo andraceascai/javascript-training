@@ -142,7 +142,7 @@ app.put("/posts/:id", (req, res) => {
     con.query(
         'UPDATE posts SET title = ?, content = ? WHERE id = ?',
         [req.body.title, req.body.content, req.params.id],
-        (err, result) => {
+        (err, res) => {
             if (err) {
                 throw err
             }
